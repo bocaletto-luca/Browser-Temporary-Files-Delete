@@ -64,7 +64,7 @@ For more information, visit the [official website](https://www.elektronoide.it).
 
 **Browser Temporary Files Delete** è un'applicazione Python che aiuta gli utenti a eliminare i file temporanei dai browser web. Fornisce un'interfaccia utente amichevole per la selezione dei browser da scannerizzare e da cui eliminare i file temporanei. Il software rileva dinamicamente i percorsi di cache dei browser web comuni e consente all'utente di eseguire operazioni di pulizia con facilità.
 
-![Screenshot 2023-10-12 002543](https://github.com/elektronoide/Browser-Temporary-Files-Delete/assets/134635227/9ca81db5-7e99-455b-be99-f59bc3d9aab8)
+![Screenshot 2023-10-12 002543](https://github.com/elektronoide/Browser-Temporary-Files-Delete/assets/134635227/ac78eded-e81f-474a-8e0d-dd0ba312aa93)
 
 ## Funzionalità
 
