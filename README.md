@@ -2,7 +2,7 @@
 
 **Author:** Luca Bocaletto
 
-**Website:** [https://www.elektronoide.it](https://www.elektronoide.it)
+**Website:** [https://bocaletto-luca.github.io]([https://bocaletto-luca.github.io])
 
 **License:** GPLv3 (GNU General Public License, version 3)
 
