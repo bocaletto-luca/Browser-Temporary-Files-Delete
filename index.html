@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browser Temporary Files Delete – Bocaletto Luca</title>
+  <meta name="description" content="Browser Temporary Files Delete is a cross-platform Python app to scan and delete temporary/cache files from major web browsers.">
+  <meta name="keywords" content="python, browser cache, temp files, cleanup, PyQt5, Windows service, systemd">
+  <meta name="author" content="Bocaletto Luca">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://github.com/bocaletto-luca/Browser-Temporary-Files-Delete">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Browser Temporary Files Delete – Bocaletto Luca">
+  <meta property="og:description" content="Easily scan and purge temporary/cache files from Chrome, Firefox, Edge, Opera, and Safari.">
+  <meta property="og:url" content="https://github.com/bocaletto-luca/Browser-Temporary-Files-Delete">
+  <meta property="og:site_name" content="Browser Temporary Files Delete">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Browser Temporary Files Delete – Bocaletto Luca">
+  <meta name="twitter:description" content="Cross-platform GUI tool to clean browser temporary files, running as a service or daemon.">
+
+  <!-- GitHub Markdown Styling -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"
+        integrity="sha512-1tV2HpYPXDWZ2U8dGBwS3OWg0doP+2hT0f5Sm5aUnRpxYgiK7g+K1/L0N0o+7vL8VtPrTzZgr9wKbI6mJRwrDw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 1rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #f6f8fa;
+      color: #24292e;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 { margin-top: 0; font-size: 2rem; }
+    h2 { margin-top: 2rem; font-size: 1.5rem; }
+    p, ul, ol { margin-bottom: 1rem; }
+    pre {
+      background: #f0f0f0;
+      padding: 1rem;
+      overflow-x: auto;
+      border-radius: 4px;
+    }
+    code {
+      background: #f0f0f0;
+      padding: .2rem .4rem;
+      border-radius: 4px;
+      font-family: SFMono-Regular, Consolas, monospace;
+    }
+    a { color: #0366d6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img.screenshot {
+      display: block;
+      max-width: 100%;
+      margin: 1rem 0;
+      border: 1px solid #e1e4e8;
+      border-radius: 4px;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e1e4e8;
+      text-align: center;
+      font-size: .9rem;
+      color: #57606a;
+    }
+    footer a { margin: 0 .5rem; color: inherit; }
+  </style>
+</head>
+
+<body class="markdown-body">
+  <div class="container">
+    <h1>Browser Temporary Files Delete</h1>
+    <p><em>Cross-platform Python GUI to scan and remove temporary/cache files from major web browsers.</em></p>
+
+    <p><strong>Author:</strong> Luca Bocaletto</p>
+    <p><strong>License:</strong> GPLv3 &nbsp;|&nbsp; <a href="LICENSE">View LICENSE</a></p>
+    <p><strong>Source:</strong> <a href="https://github.com/bocaletto-luca/Browser-Temporary-Files-Delete">GitHub Repository</a></p>
+
+    <h2>Overview</h2>
+    <ul>
+      <li>Collects system-independent paths for browser caches (Chrome, Firefox, Edge, Opera, Safari)</li>
+      <li>Scan & delete selected browsers’ temporary files via a friendly PyQt5 interface</li>
+      <li>Run in background as a Windows Service or systemd daemon</li>
+      <li>Auto-restart on crash and auto-start at system boot</li>
+    </ul>
+
+    <h2>Screenshots</h2>
+    <!-- Insert your hosted image URLs below -->
+    <img class="screenshot" src="PATH_TO_SCREENSHOT_1.png" alt="Main window screenshot">
+    <img class="screenshot" src="PATH_TO_SCREENSHOT_2.png" alt="Scan results screenshot">
+
+    <h2>Installation</h2>
+    <pre><code class="language-bash"># Clone repository
+git clone https://github.com/bocaletto-luca/Browser-Temporary-Files-Delete.git
+cd Browser-Temporary-Files-Delete
+
+# Install dependencies
+pip install -r requirements.txt</code></pre>
+
+    <h2>Usage</h2>
+    <ol>
+      <li>Launch the GUI: <code>python your_application.py</code></li>
+      <li>Check the browsers you want to clean</li>
+      <li>Click “Start Scan” to see total temp files</li>
+      <li>Click “Delete Files” to purge selected caches</li>
+      <li>Use “About” menu to view app info</li>
+    </ol>
+
+    <h2>System Requirements</h2>
+    <ul>
+      <li>Python 3.7 or newer</li>
+      <li>PyQt5</li>
+      <li>OS module (standard library)</li>
+    </ul>
+
+    <h2>Service Installation</h2>
+    <h3>Windows Service</h3>
+    <ol>
+      <li>Install:</li>
+      <pre><code class="language-bash">python windows_service.py install</code></pre>
+      <li>Configure auto-restart:</li>
+      <pre><code class="language-bash">sc.exe failure PyServerReport reset=0 actions=restart/5000</code></pre>
+      <li>Start / Stop / Remove:</li>
+      <pre><code class="language-bash">python windows_service.py start
+python windows_service.py stop
+python windows_service.py remove</code></pre>
+    </ol>
+
+    <h3>Linux (systemd)</h3>
+    <ol>
+      <li>Copy files:</li>
+      <pre><code class="language-bash">sudo mkdir -p /opt/browser-clean
+sudo cp your_application.py config.yaml /opt/browser-clean/
+sudo cp linux_service.service /etc/systemd/system/browser-clean.service</code></pre>
+      <li>Enable & start:</li>
+      <pre><code class="language-bash">sudo systemctl daemon-reload
+sudo systemctl enable browser-clean
+sudo systemctl start browser-clean</code></pre>
+      <li>Check status / logs:</li>
+      <pre><code class="language-bash">sudo systemctl status browser-clean
+journalctl -u browser-clean -f</code></pre>
+    </ol>
+
+    <h2>Getting Started</h2>
+    <ol>
+      <li>Clone or download the repo</li>
+      <li>Install dependencies</li>
+      <li>Run the GUI script</li>
+    </ol>
+
+    <h2>Acknowledgments</h2>
+    <ul>
+      <li>PyQt5 for the GUI framework</li>
+      <li>Python community for continuous support</li>
+    </ul>
+
+    <footer>
+      <p>© 2025 Bocaletto Luca</p>
+      <p>
+        <a href="https://bocaletto-luca.github.io">bocaletto-luca.github.io</a> |
+        <a href="https://bocalettoluca.altervista.org">bocalettoluca.altervista.org</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
+```
